@@ -39,7 +39,7 @@ func main() {
 	r.HandleFunc("/analytics/transactions/{accountId}", GetTransactionsHandler).Methods("GET")
 	r.HandleFunc("/analytics/summary/{userId}", GetFinancialSummaryHandler).Methods("GET")
 
-	port := "8080"
+	port := "8000"
 	log.Printf("Server starting on port %s", port)
 
 	loggedRouter := loggingMiddleware(r)

@@ -8,17 +8,17 @@ import (
 )
 
 type InMemoryStorage struct {
-	users        map[string]User     // key: UserID
-	accounts     map[string]Account  // key: AccountID
-	cards        map[string]Card     // key: CardID
-	loans        map[string]Loan     // key: LoanID
-	transactions []Transaction       // Просто список всех транзакций
-	userIndex    map[string]string   // key: Username -> UserID (для быстрой проверки уникальности)
-	emailIndex   map[string]string   // key: Email -> UserID
-	accountIndex map[string][]string // key: UserID -> []AccountID
-	cardIndex    map[string][]string // key: AccountID -> []CardID
-	loanIndex    map[string][]string // key: UserID -> []LoanID
-	mu           sync.RWMutex        // Mutex для защиты доступа к данным
+	users        map[string]User     
+	accounts     map[string]Account  
+	cards        map[string]Card     
+	loans        map[string]Loan     
+	transactions []Transaction       
+	userIndex    map[string]string   
+	emailIndex   map[string]string   
+	accountIndex map[string][]string 
+	cardIndex    map[string][]string 
+	loanIndex    map[string][]string 
+	mu           sync.RWMutex        
 }
 
 var storage *InMemoryStorage
